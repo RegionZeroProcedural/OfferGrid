@@ -1,0 +1,10 @@
+{
+  "name": "OfferGrid",
+  "short_name": "OfferGrid",
+  "description": "Know when a deal is actually a deal.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#06101a",
+  "theme_color": "#06101a"
+}

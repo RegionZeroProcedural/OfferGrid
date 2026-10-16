@@ -1,0 +1,25 @@
+{
+  "name": "offergrid-v3-7-60-campaign-ready",
+  "version": "3.7.60",
+  "private": true,
+  "type": "module",
+  "description": "OfferGrid V3.7.60: lowest eligible verified-price cards, Deal Heat-first ranking, cache repair, storefront reliability fixes, and professional responsive polish.",
+  "scripts": {
+    "start": "node bootstrap.js",
+    "dev": "node --watch bootstrap.js",
+    "check": "node scripts/check.js && node scripts/check-marketing.js",
+    "secrets": "node scripts/generate-live-secrets.js",
+    "check:live": "node scripts/check-live.js",
+    "predeploy:audit": "node scripts/predeploy-audit.js",
+    "audit:normalization": "node scripts/audit-normalization.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "event-notification-nodejs-sdk": "^1.0.3",
+    "ssh2-sftp-client": "^12.1.1"
+  }
+}

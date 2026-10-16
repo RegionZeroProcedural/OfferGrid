@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://www.ebay.com"><link rel="dns-prefetch" href="//www.ebay.com">
+  <meta name="description" content="OfferGrid is a price-intelligence purchasing assistant that verifies current prices, compares sellers, tracks price history, and helps shoppers decide when a price is worth buying.">
+  <title>OfferGrid — Know when a deal is actually a deal.</title>
+  <link rel="stylesheet" href="/css/style.css?v=3.7.61">
+  <meta name="theme-color" content="#06101a">
+  <link rel="manifest" href="/manifest.webmanifest">
+</head>
+<body>
+<header data-site-header class="site-header shell"><a class="brand-lockup" href="/"><span class="brand-name">OfferGrid</span><span class="brand-tagline">Know when a deal is actually a deal.</span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">☰</button><nav class="main-nav"><a href="/" class="active">Price Intelligence</a><a href="/trending.html">Price Signals</a><a href="/methodology.html">Methodology</a><a href="/disclosure.html">Disclosure</a></nav></header>
+
+<main class="shell">
+  <section class="hero trust-hero">
+    <div class="hero-copy">
+      <div class="eyebrow">PRICE INTELLIGENCE PURCHASING ASSISTANT</div>
+      <h1>Know when a deal is actually a deal.</h1>
+      <p>
+        OfferGrid verifies current prices, compares matched sellers, analyzes recorded
+        price history, and helps you decide whether today’s price is actually worth buying.
+      </p>
+      <div class="hero-actions">
+        <a class="primary-button inline hero-trending" href="#all-products">Analyze a product</a>
+        <a class="secondary-link" href="/trending.html">See the strongest price signals →</a>
+      </div>
+    </div>
+    <div class="hero-proof">
+      <div class="proof-kicker">PURCHASE DECISIONS, BACKED BY DATA</div>
+      <div class="proof-row"><span>01</span><strong>Verify the exact current price</strong></div>
+      <div class="proof-row"><span>02</span><strong>Compare the same product across sellers</strong></div>
+      <div class="proof-row"><span>03</span><strong>Put today’s price in historical context</strong></div>
+      <div class="proof-row"><span>04</span><strong>See the evidence before you buy</strong></div>
+    </div>
+  </section>
+
+  <section class="trust-strip" aria-label="OfferGrid price-intelligence principles">
+    <div><strong>Verified current price</strong><span>The displayed marketplace price stays tied to the exact listing OfferGrid checked.</span></div>
+    <div><strong>Same-product comparison</strong><span>Model, pack count, capacity, size, weight and power conflicts block misleading comparisons.</span></div>
+    <div><strong>Historical context</strong><span>OfferGrid records real observations over time instead of inventing a reference price.</span></div>
+  </section>
+
+  <section class="intelligence-flow" aria-label="How OfferGrid helps with a purchase">
+    <div class="flow-step"><span>01</span><strong>Search a product</strong><small>Brand, model, category, or exact item.</small></div>
+    <div class="flow-arrow" aria-hidden="true">→</div>
+    <div class="flow-step"><span>02</span><strong>Compare verified sellers</strong><small>Same product, current market context.</small></div>
+    <div class="flow-arrow" aria-hidden="true">→</div>
+    <div class="flow-step"><span>03</span><strong>Read the price signal</strong><small>History, market position, and Deal Heat.</small></div>
+    <div class="flow-arrow" aria-hidden="true">→</div>
+    <div class="flow-step"><span>04</span><strong>Decide with context</strong><small>Buy now, compare further, or keep watching.</small></div>
+  </section>
+
+  <section class="home-trending">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">PRICE SIGNALS</div>
+        <h2>Products with the strongest current value signals</h2>
+      </div>
+      <a class="secondary-link" href="/trending.html">See all price signals →</a>
+    </div>
+    <div id="trending-preview" class="trending-preview">
+      <div class="loading">Loading trending deals…</div>
+    </div>
+  </section>
+
+  <div id="ad-slot"></div>
+
+  <section class="how-it-works">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">HOW IT WORKS</div>
+        <h2>Evidence before the purchase.</h2>
+      </div>
+      <a class="secondary-link" href="/methodology.html">Full methodology →</a>
+    </div>
+    <div class="process-grid">
+      <article><span>01</span><h3>Verify</h3><p>OfferGrid checks exact marketplace listings and records real observed prices over time.</p></article>
+      <article><span>02</span><h3>Compare</h3><p>Matched offers are checked across sellers without merging conflicting models, sizes, packs, or capacities.</p></article>
+      <article><span>03</span><h3>Interpret</h3><p>Price history, Deal Heat, market position, and confidence turn raw listings into a purchasing signal.</p></article>
+    </div>
+  </section>
+
+  <section id="all-products" class="store-section">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">PRICE INTELLIGENCE</div>
+        <h2>Search tracked products</h2>
+      </div>
+    </div>
+
+    <p class="store-intro">Results are ranked by Deal Heat by default. Every normalized product card uses the lowest eligible verified seller price currently tracked.</p>
+    <form class="searchbar" id="search-form" role="search">
+      <label class="search-field search-field-query" for="search-input">
+        <span>Product, brand, or model</span>
+        <input id="search-input" name="q" type="search" placeholder="Try “iPad Mini 6” or “Xbox Series X”" autocomplete="off" enterkeyhint="search">
+      </label>
+      <label class="search-field" for="category-select">
+        <span>Category</span>
+        <select id="category-select" name="category"><option value="">All categories</option></select>
+      </label>
+      <label class="search-field" for="sort-select">
+        <span>Rank results by</span>
+        <select id="sort-select" name="sort">
+          <option value="heat">Deal Heat: strongest first</option>
+          <option value="new">Newest</option>
+          <option value="price">Lowest tracked price</option>
+          <option value="competitors">Verified sellers: most first</option>
+        </select>
+      </label>
+      <button class="search-submit" type="submit">Search offers</button>
+      <label class="search-condition-toggle" for="include-parts-toggle">
+        <input id="include-parts-toggle" type="checkbox">
+        <span>Show “For Parts / Broken / Not Working / Not Tested / Box Only” listings</span>
+        <small>These listings stay excluded from Deal Heat, market ranges, price history, and competitor ranking.</small>
+      </label>
+    </form>
+
+    <section id="search-activity" class="search-activity hidden" data-stage="idle" aria-label="Search activity">
+      <div class="search-activity-main">
+        <div class="search-activity-heading">
+          <span id="search-activity-stage" class="search-activity-stage">READY</span>
+          <strong id="search-activity-title">Catalog ready</strong>
+        </div>
+        <p id="search-activity-detail" class="search-activity-detail" aria-live="polite">OfferGrid is ready.</p>
+      </div>
+      <div class="search-activity-metrics" aria-label="Search progress details">
+        <div class="search-activity-metric">
+          <span>PROGRESS</span>
+          <strong id="search-activity-progress">—</strong>
+        </div>
+        <div class="search-activity-metric">
+          <span>CURRENT SELLERS</span>
+          <strong id="search-activity-sellers">—</strong>
+        </div>
+        <div class="search-activity-metric search-activity-sort">
+          <span>SORT</span>
+          <strong id="search-activity-sort">Default</strong>
+        </div>
+        <div class="search-activity-metric search-activity-live-sort">
+          <span>LIVE RANKING</span>
+          <strong>150 ms</strong>
+        </div>
+      </div>
+      <div class="search-activity-progress-track" role="progressbar" aria-label="Search activity progress" aria-valuemin="0" aria-valuemax="100">
+        <span id="search-activity-bar" aria-hidden="true"></span>
+      </div>
+    </section>
+
+    <div class="results-meta-row">
+      <div id="results-status" class="results-status" aria-live="polite"></div>
+      <div id="live-store-status" class="live-sync-status reconnecting" data-state="reconnecting" aria-live="polite">LIVE RECONNECTING</div>
+    </div>
+    <section id="products" class="product-grid" aria-label="Product results"></section>
+
+    <nav id="pagination" class="pagination hidden" aria-label="Product pages">
+      <button id="page-prev" type="button">← Previous</button>
+      <span id="page-info">Page 1</span>
+      <button id="page-next" type="button">Next →</button>
+    </nav>
+
+    <div id="empty" class="empty hidden">
+      <div class="searching-orbit" aria-hidden="true"></div>
+      <h2>Searching marketplaces…</h2>
+      <p>OfferGrid is looking for a verified match and can add newly discovered listings to the catalog.</p>
+    </div>
+  </section>
+</main>
+
+<footer data-site-footer></footer>
+
+<script type="module" src="/js/store.js?v=3.7.61"></script>
+<script defer src="/js/boot-recovery.js?v=3.7.61"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+export function demoCandidates() {
+  return [
+    {
+      provider: "demo",
+      externalId: "filter-a",
+      title: "High Capacity Aquarium Canister Filter",
+      merchant: "Aquatic Demo Supply",
+      price: 189.99,
+      originalPrice: 229.99,
+      currency: "USD",
+      affiliateUrl: "https://example.com/filter-a?aff=demo",
+      sourceUrl: "https://example.com/filter-a",
+      imageUrl: "",
+      brand: "AquaWorks",
+      category: "Aquarium Filters",
+      availability: "in_stock",
+      commissionRate: 0.08,
+      commissionIsEstimate: false,
+      merchantRatingPct: 98.6,
+      mpn: "AW-307"
+    },
+    {
+      provider: "demo",
+      externalId: "filter-b",
+      title: "High Capacity Aquarium Canister Filter",
+      merchant: "Demo Marketplace",
+      price: 181.50,
+      originalPrice: 219.00,
+      currency: "USD",
+      affiliateUrl: "https://example.com/filter-b?aff=demo",
+      sourceUrl: "https://example.com/filter-b",
+      imageUrl: "",
+      brand: "AquaWorks",
+      category: "Aquarium Filters",
+      availability: "in_stock",
+      commissionRate: 0.03,
+      commissionIsEstimate: false,
+      merchantRatingPct: 96.2,
+      mpn: "AW-307"
+    },
+    {
+      provider: "demo",
+      externalId: "caliper-1",
+      title: "6 Inch Stainless Digital Caliper",
+      merchant: "Tool Demo Direct",
+      price: 24.95,
+      originalPrice: 39.95,
+      currency: "USD",
+      affiliateUrl: "https://example.com/caliper?aff=demo",
+      sourceUrl: "https://example.com/caliper",
+      imageUrl: "",
+      brand: "Workshop",
+      category: "Measuring Tools",
+      availability: "in_stock",
+      commissionRate: 0.07,
+      commissionIsEstimate: false,
+      merchantRatingPct: 99.1,
+      mpn: "CAL-006"
+    }
+  ];
+}

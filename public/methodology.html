@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://www.ebay.com"><link rel="dns-prefetch" href="//www.ebay.com">
+  <meta name="description" content="How OfferGrid verifies prices, matches products, compares sellers, builds purchasing signals, and transparently handles monetization.">
+  <title>Methodology | OfferGrid</title>
+  <link rel="stylesheet" href="/css/style.css?v=3.7.61">
+  <meta name="theme-color" content="#0b1118">
+  <link rel="manifest" href="/manifest.webmanifest">
+</head>
+<body>
+<header data-site-header class="site-header shell"><a class="brand-lockup" href="/"><span class="brand-name">OfferGrid</span><span class="brand-tagline">Know when a deal is actually a deal.</span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">☰</button><nav class="main-nav"><a href="/">Price Intelligence</a><a href="/trending.html">Price Signals</a><a href="/methodology.html" class="active">Methodology</a><a href="/disclosure.html">Disclosure</a></nav></header>
+<main class="shell">
+  <section class="methodology-hero">
+    <div class="eyebrow">HOW OFFERGRID WORKS</div>
+    <h1>Transparent price intelligence.</h1>
+    <p>
+      OfferGrid is a price-intelligence purchasing assistant designed to show the
+      evidence behind a purchasing decision: verified current prices, recorded history,
+      same-product market comparisons, match confidence, and clearly disclosed ranking factors.
+    </p>
+  </section>
+
+  <section class="methodology-grid">
+    <article>
+      <span class="method-number">01</span>
+      <h2>We record prices we actually observe.</h2>
+      <p>
+        Historical charts begin when OfferGrid starts tracking a product. We do not invent
+        prices from before that point.
+      </p>
+    </article>
+    <article>
+      <span class="method-number">02</span>
+      <h2>We separate deal quality from seller claims.</h2>
+      <p>
+        Deal Heat uses recorded price history, markdown depth, offer quality, and whether a
+        price is a new recorded low.
+      </p>
+    </article>
+    <article>
+      <span class="method-number">03</span>
+      <h2>We show when our confidence is limited.</h2>
+      <p>
+        Exact identifiers are preferred. Without them, OfferGrid refuses to combine listings
+        that conflict on model, product family, pack count, capacity, weight, size or power.
+      </p>
+    </article>
+  </section>
+
+
+  <section class="methodology-section" id="tracked-coverage">
+    <div class="eyebrow">TRACKED COVERAGE</div>
+    <h2>What “lowest” and “best” mean on OfferGrid</h2>
+    <p>
+      OfferGrid compares the offers currently discovered, tracked, and eligible for the applicable
+      comparison. Unless a label expressly says otherwise, “lowest,” “best,” “market low,” and similar
+      terms are dataset-scoped descriptions, not claims that OfferGrid has searched every merchant or
+      purchasing option everywhere. A lower price can exist outside the sources or offers currently
+      known to OfferGrid.
+    </p>
+    <p>
+      Shipping, tax, membership pricing, personalized promotions, coupons, rebates, local pricing,
+      bundles, financing, trade-ins, and other checkout-specific terms may not be available in source
+      data. The merchant's checkout page remains the final source for the transaction amount and terms.
+    </p>
+  </section>
+  <section class="methodology-section">
+    <div class="eyebrow">OFFER RANKING</div>
+    <h2>How current merchant offers are ranked</h2>
+    <div class="method-breakdown">
+      <div><strong>30</strong><span>Price competitiveness</span></div>
+      <div><strong>20</strong><span>Markdown depth</span></div>
+      <div><strong>20</strong><span>Estimated commission economics</span></div>
+      <div><strong>15</strong><span>Merchant feedback when available</span></div>
+      <div><strong>10</strong><span>Availability</span></div>
+      <div><strong>5</strong><span>Freshness</span></div>
+    </div>
+    <p class="method-note">
+      OfferGrid’s purchasing intelligence and recorded price history are presented separately
+      from merchant-offer ranking. Commission economics can affect the internal ranking of
+      current offers because OfferGrid is affiliate-supported; that incentive is disclosed
+      rather than hidden. Verified prices, historical observations, market comparisons,
+      product matching, and Deal Heat remain visible so visitors can evaluate the evidence
+      independently.
+    </p>
+  </section>
+
+  <section class="methodology-section" id="data-accuracy">
+    <div class="eyebrow">DATA ACCURACY</div>
+    <h2>How OfferGrid verifies eBay pricing</h2>
+
+    <p>
+      eBay search results are used to discover listings efficiently, but OfferGrid treats
+      the exact eBay item endpoint as the higher-confidence source for public price claims.
+      Published eBay offers enter a separate detail-verification queue, and a product page
+      can refresh a stale display offer before showing it.
+    </p>
+
+    <div class="confidence-table">
+      <div><strong>Exact</strong><span>eBay item-detail price</span><em>Listing ID verified</em></div>
+      <div><strong>Observed</strong><span>eBay search-result price</span><em>Discovery signal</em></div>
+      <div><strong>Restricted</strong><span>Merchant-controlled / MAP display</span><em>No invented price</em></div>
+    </div>
+
+    <p>
+      OfferGrid keeps stock quantity, lot size, title pack count, per-buyer quantity limits,
+      unit pricing and base listing price as separate fields. A seller having many units in
+      stock does not make an item a multi-pack, while a real multi-pack remains a distinct
+      product variant.
+    </p>
+
+    <p>
+      The item price is a base item price. Shipping, tax, coupons, quantity discounts and
+      checkout-specific promotions can change the final amount. OfferGrid does not invent a
+      universal checkout total when the source API cannot prove one.
+    </p>
+  </section>
+
+  <section class="methodology-section" id="market-comparison">
+    <div class="eyebrow">CROSS-STORE MARKET CHECK</div>
+    <h2>How eBay comparisons are matched</h2>
+    <div class="confidence-table">
+      <div><strong>100%</strong><span>Exact GTIN / UPC / EAN</span><em>High confidence</em></div>
+      <div><strong>96%</strong><span>Brand + manufacturer part number</span><em>High confidence</em></div>
+      <div><strong>98%</strong><span>eBay product ID + matching brand</span><em>Exact variant proof still required</em></div>
+      <div><strong>WITHHELD</strong><span>Title-only / weak identity</span><em>No same-product claim</em></div>
+    </div>
+    <p>
+      Market comparisons use only offers whose product relationship is supported by a strong
+      canonical identifier. Title similarity by itself is never enough to make a same-product
+      comparison claim. Weak-identity products can still show their own source listing and real
+      price history, but cross-store comparison is withheld until identity can be proven.
+      The displayed comparison currently uses item price. Shipping, tax, membership pricing,
+      coupons, item condition, and bundle contents can change the final checkout total.
+    </p>
+  </section>
+
+  <section class="methodology-section" id="ebay-competition">
+    <div class="eyebrow">EBAY SAME-PRODUCT SCANNER</div>
+    <h2>How eBay seller competition is refreshed</h2>
+    <p>Published products with an active eBay offer enter a separate rotating scan queue. The scanner prioritizes products that have gone the longest without a dedicated competitor refresh.</p>
+    <div class="confidence-table">
+      <div><strong>100%</strong><span>Search by GTIN / UPC / EAN</span><em>Exact identifier</em></div>
+      <div><strong>98%</strong><span>eBay product ID + matching brand</span><em>Exact variant proof required</em></div>
+      <div><strong>96%</strong><span>Brand + manufacturer part number</span><em>Strong identifier match</em></div>
+      <div><strong>DISCOVERY ONLY</strong><span>Strict title search fallback</span><em>Cannot prove a competitor</em></div>
+    </div>
+    <p>Search results are candidates, not proof. Every secondary eBay listing must pass exact item-detail identity verification before it can influence seller comparisons, top tracked-offer selection, Deal Heat, or price history. If the product has no provable GTIN, Brand+MPN, or ePID+Brand identity, OfferGrid withholds exact competitor comparison rather than guessing from similar titles. Fixed-price listings are used for competitor searches. When product condition is known, OfferGrid avoids mixing broad condition groups such as new and used. Seller tables rank the tracked item price; shipping, tax, coupons, and checkout-specific discounts remain separate and should be verified before purchase.</p>
+  </section>
+
+  <section class="methodology-section" id="catalog-growth">
+    <div class="eyebrow">AUTONOMOUS CATALOG GROWTH</div>
+    <h2>How OfferGrid discovers new products</h2>
+    <p>
+      The discovery scheduler wakes every 20 minutes and rotates through a bounded subset
+      of enabled searches. This keeps product discovery continuous without rerunning every
+      search on every cycle.
+    </p>
+    <p>
+      If an eBay search completes without creating a new normalized product, OfferGrid can
+      deterministically synthesize additional searches from a category-specific product-family
+      vocabulary. The expansion process is rule-based rather than generative AI: the same
+      query and catalog state produce the same related phrases.
+    </p>
+    <p>
+      Shopper-generated searches use a stricter path: OfferGrid first measures how many catalog
+      products actually satisfy the query intent. If the requested page cannot be filled, it searches
+      connected marketplaces for additional exact matches, verifies them, adds qualifying products to
+      tracking, and repeats within a bounded search budget. It never pads a page with merely adjacent
+      category items; when exact results are exhausted, the page ends explicitly.
+    </p>
+    <p>
+      User-generated discovery rules remain tied to the original query. When one literal marketplace
+      request is too thin, OfferGrid may add conservative context while preserving every meaningful
+      original term; returned candidates still have to pass the original query before tracking or
+      publication. It never falls back to unrelated category suggestions. Explicit sexual searches and
+      explicit products are rejected before marketplace discovery or catalog persistence.
+    </p>
+  </section>
+
+  <section class="methodology-section">
+    <div class="eyebrow">BUSINESS MODEL</div>
+    <h2>How the purchasing assistant is funded</h2>
+    <p>
+      OfferGrid is built as a price-intelligence product, not a merchant. Some outbound
+      merchant links are affiliate links, which means OfferGrid may receive a commission
+      after a qualifying purchase. Squirrel or other affiliate technology may also monetize
+      eligible merchant links. This does not change the recorded historical observations or
+      exact listing identity, and the relationship is disclosed so visitors can account for
+      it when evaluating recommendations.
+    </p>
+    <a class="secondary-link" href="/disclosure.html">Read the full disclosure →</a>
+  </section>
+</main>
+<footer data-site-footer></footer>
+<script type="module" src="/js/common.js?v=3.7.61"></script>
+<script defer src="/js/boot-recovery.js?v=3.7.61"></script>
+</body>
+</html>

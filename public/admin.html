@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Admin</title><link rel="stylesheet" href="/css/style.css?v=3.7.61">  <meta name="theme-color" content="#06101a">
+  <link rel="manifest" href="/manifest.webmanifest">
+</head>
+<body>
+<header data-site-header class="site-header shell"><a class="brand-lockup" href="/"><span class="brand-name">OfferGrid</span><span class="brand-tagline">Know when a deal is actually a deal.</span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">☰</button><nav class="main-nav"><a href="/">Price Intelligence</a><a href="/trending.html">Price Signals</a><a href="/methodology.html">Methodology</a><a href="/disclosure.html">Disclosure</a><a href="/admin.html" class="active">Admin</a></nav></header>
+<main class="shell admin-shell">
+<section id="login-panel" class="login-card"><div class="eyebrow">ADMIN</div><h1>Sign in</h1><form id="login-form"><label>Password</label><input id="password" type="password" required autofocus><button>Sign in</button></form><p id="login-error" class="error-text"></p></section>
+<section id="admin-app" class="hidden">
+<div class="admin-title-row"><div><div class="eyebrow">OFFERGRID V3.7.30 NORMALIZATION TRUST</div><h1>Price intelligence engine</h1><p class="muted">Discover → verify → compare → publish → measure.</p></div><div class="admin-title-actions"><span id="admin-live-status" class="live-sync-status reconnecting" data-state="reconnecting">RECONNECTING</span><button id="logout" class="ghost">Log out</button></div></div>
+<div id="message" class="flash hidden"></div>
+<section id="deployment-readiness" class="admin-section deployment-readiness"></section><h2>Catalog</h2><div id="stats" class="stats"></div><div class="section-head"><div><h2>Outbound traffic</h2><p id="click-reset-note" class="muted"></p></div><button id="reset-clicks" class="ghost" type="button">Reset click counters</button></div><div id="analytics" class="stats"></div><div id="top-clicks" class="top-clicks"></div><div id="integration-status" class="integration-status"></div>
+
+<section class="admin-section campaign-attribution-section">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">CAMPAIGN + COMMISSION ATTRIBUTION</div>
+      <h2>Marketing performance</h2>
+      <p class="muted">First-party visit and outbound-click reporting, grouped by source, campaign, Dallas area, and affiliate provider.</p>
+    </div>
+    <span id="campaign-mode-status" class="status-pill">CAMPAIGN MODE</span>
+  </div>
+  <div id="marketing-summary" class="stats campaign-summary"></div>
+  <div id="marketing-attribution-note" class="campaign-attribution-note" aria-live="polite"></div>
+  <div class="campaign-grid">
+    <div class="panel">
+      <h3>Traffic by campaign tag</h3>
+      <div id="campaign-breakdown" class="campaign-breakdown"><div class="loading">Loading campaign traffic…</div></div>
+    </div>
+    <div class="panel">
+      <h3>Traffic by Dallas placement link</h3>
+      <div id="area-breakdown" class="campaign-breakdown"><div class="loading">Loading area traffic…</div></div>
+    </div>
+  </div>
+  <div class="panel commission-panel">
+    <div class="section-head">
+      <div>
+        <h3>Affiliate commissions</h3>
+        <p class="muted">Import the canonical CSV export to reconcile partner-reported transactions with OfferGrid click references. <a href="/downloads/commission_import_template.csv" download>Download template</a>.</p>
+      </div>
+    </div>
+    <div id="commission-summary" class="stats campaign-summary"></div>
+    <form id="commission-import-form" class="commission-import-form">
+      <label>Affiliate network
+        <select id="commission-network">
+          <option value="">Use network column</option>
+          <option value="ebay">eBay Partner Network</option>
+          <option value="awin">Awin</option>
+          <option value="rakuten">Rakuten Advertising</option>
+          <option value="squirrel">Squirrel</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+      <label>Commission CSV
+        <input id="commission-file" type="file" accept=".csv,text/csv" required>
+      </label>
+      <button type="submit">Import commissions</button>
+    </form>
+    <div id="commission-breakdown" class="commission-breakdowns"></div>
+  </div>
+</section>
+
+<section class="admin-section visitor-retention-section">
+  <div class="panel visitor-retention-panel">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">AUDIENCE RETENTION</div>
+        <h2>Returning visitors</h2>
+        <p class="muted">Anonymous browsers that OfferGrid has seen before and that returned during the rolling 30-day window.</p>
+      </div>
+      <span class="status-pill live">30 DAY WINDOW</span>
+    </div>
+    <div class="stats visitor-retention-stats">
+      <div class="retention-primary">
+        <strong id="returning-visitors-30d">0</strong>
+        <span>Returning visitors · 30d</span>
+        <small>Unique known browsers that came back</small>
+      </div>
+      <div>
+        <strong id="unique-visitors-30d">0</strong>
+        <span>Unique visitors · 30d</span>
+        <small>Browsers seen during the window</small>
+      </div>
+      <div>
+        <strong id="first-time-visitors-30d">0</strong>
+        <span>First-time visitors · 30d</span>
+        <small>First observed during timed tracking</small>
+      </div>
+      <div>
+        <strong id="visitor-return-rate-30d">0.0%</strong>
+        <span>Return rate · 30d</span>
+        <small>Returning ÷ unique visitors</small>
+      </div>
+    </div>
+    <p id="visitor-retention-note" class="muted retention-footnote">Timed return tracking will begin with the first public visit after this upgrade.</p>
+    <section class="visitor-geo-section" aria-labelledby="visitor-geo-title">
+      <div class="visitor-geo-head">
+        <div>
+          <div class="eyebrow">PRIVACY-SAFE LOCATION SIGNALS</div>
+          <h3 id="visitor-geo-title">Connected visitors + location history</h3>
+          <p class="muted">Approximate edge location only. Coordinates are rounded, raw IP addresses are not stored, and location history expires automatically.</p>
+        </div>
+        <span id="visitor-geo-status" class="status-pill">WAITING FOR EDGE DATA</span>
+      </div>
+      <div class="visitor-geo-controls" role="group" aria-label="Visitor map time window">
+        <button type="button" class="ghost active" data-geo-window="live" aria-pressed="true">Live</button>
+        <button type="button" class="ghost" data-geo-window="24h" aria-pressed="false">24 hours</button>
+        <button type="button" class="ghost" data-geo-window="7d" aria-pressed="false">7 days</button>
+        <button type="button" class="ghost" data-geo-window="30d" aria-pressed="false">30 days</button>
+      </div>
+      <div class="visitor-geo-layout">
+        <div id="visitor-geo-map" class="visitor-geo-map" role="img" aria-label="Map of approximate visitor locations">
+          <div class="loading">Waiting for visitor location data…</div>
+        </div>
+        <aside class="visitor-geo-details" aria-label="Visitor location details">
+          <div id="visitor-geo-summary" class="visitor-geo-summary"></div>
+          <div id="visitor-geo-list" class="visitor-geo-list"></div>
+          <p id="visitor-geo-note" class="muted visitor-geo-note">Enable Cloudflare’s “Add visitor location headers” Managed Transform to populate this map.</p>
+        </aside>
+      </div>
+    </section>
+  </div>
+</section>
+
+
+<section class="admin-section squirrel-quickstart">
+  <div class="panel squirrel-quickstart-panel">
+    <div>
+      <div class="eyebrow">SQUIRREL AUTO-MONETIZATION</div>
+      <h2>Affiliate monetization is wired in</h2>
+      <p class="muted">
+        The Squirrel publisher script below is loaded automatically on public Store,
+        Trending, Disclosure, and Product pages while the Squirrel connection is enabled.
+        It is intentionally not loaded inside Admin.
+      </p>
+    </div>
+    <div class="squirrel-state">PUBLIC PAGES ONLY</div>
+  </div>
+</section>
+
+<section class="admin-section api-vault-section">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">SERVER-SIDE CREDENTIAL VAULT</div>
+      <h2>API & affiliate connections</h2>
+      <p class="muted">
+        Enter provider credentials here instead of editing <code>.env</code>.
+        Secret values are never returned to the browser after saving.
+      </p>
+    </div>
+  </div>
+
+  <div id="vault-security" class="vault-security"></div>
+  <div id="credential-vault" class="credential-vault">
+    <div class="loading">Loading integrations…</div>
+  </div>
+</section>
+
+<section class="admin-section automation-panel-section">
+  <div class="panel automation-panel">
+    <div>
+      <div class="eyebrow">AUTONOMOUS PRICE INTELLIGENCE</div>
+      <h2>Discovery + eBay competitor scanning</h2>
+      <p class="muted">Broad discovery runs independently from the dedicated eBay same-product competitor scanner. The competitor job prioritizes products that have gone the longest without a dedicated scan.</p>
+      <div id="automation-details" class="automation-details"></div>
+    </div>
+    <div class="automation-actions"><button id="run-ebay-competitors" type="button">Scan eBay competitors now</button>
+      <button id="verify-ebay-prices" type="button">Verify eBay prices now</button>
+      <button id="run-catalog-integrity" type="button" class="ghost">Run integrity audit</button>
+      <button id="run-product-lifecycle" type="button" class="ghost">Run lifecycle cleanup</button>
+      <button id="cleanup-ebay-competitors" type="button" class="ghost">Quarantine unsafe competitors</button>
+      <button id="sanitize-ebay-competitors" type="button" class="ghost">Bulk verify pending competitors</button></div>
+  </div>
+</section>
+
+<section class="admin-section ebay-api-usage-section">
+  <div class="panel">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">EBAY API EFFICIENCY + GROWTH CHECK</div>
+        <h2>Persistent API usage telemetry</h2>
+        <p class="muted">Updates every two seconds. Actual calls rise only when a request reaches eBay; deferred attempts rise when quota blocks ready work, while unique blocked demand stays deduplicated for quota-growth estimates.</p>
+      </div>
+    </div>
+    <div id="ebay-api-usage-summary" class="stats"></div>
+    <div id="ebay-api-endpoints" class="automation-details"></div>
+  </div>
+</section>
+
+<section class="admin-section foldable-section" data-fold-section="rules"><div class="section-head"><div><h2>Discovery rules</h2><p class="muted">Saved API searches can run automatically while the server is online.</p></div><div class="section-actions"><button id="toggle-rules-list" type="button" class="ghost fold-toggle" aria-expanded="true" aria-controls="rules-list-wrap">Collapse rules</button><button id="run-all-rules">Run enabled rules</button></div></div><div id="rules-list-wrap" class="fold-content"><div id="rules-list"></div></div>
+<form id="rule-form" class="rule-form panel"><h3>Create rule</h3><div class="rule-form-grid"><label>Name<input id="rule-name" placeholder="Aquarium filter deals" required></label><label>Provider<select id="rule-provider"><option value="ebay">eBay</option><option value="awin">Awin</option></select></label><label>eBay search<input id="rule-query" placeholder="canister aquarium filter"></label><label>Awin advertiser ID<input id="rule-awin-id" inputmode="numeric" placeholder="12345"></label><label>Awin locale<input id="rule-locale" value="en_US"></label><label>Import limit<input id="rule-limit" type="number" value="50" min="1" max="5000"></label><label>Min offer score<input id="rule-score" type="number" value="70" min="0" max="100"></label><label>Min Deal Heat<input id="rule-heat" type="number" value="0" min="0" max="100"></label><label>Min discount %<input id="rule-discount" type="number" value="0" min="0" max="100"></label><label>Min commission %<input id="rule-commission" type="number" value="0" min="0" max="100" step="0.1"></label></div><label class="auto-check"><input id="rule-auto-approve" type="checkbox"> Auto-publish products that pass every threshold <strong>(use carefully)</strong></label><button>Save discovery rule</button></form></section>
+<section class="admin-section starter-populate-section">
+  <div class="starter-populate panel">
+    <div>
+      <div class="eyebrow">ONE-CLICK STARTER CATALOG</div>
+      <h2>Populate the store with real products</h2>
+      <p class="muted">
+        Uses your connected eBay Browse API to search multiple starter categories,
+        import live offers, score them, and publish them. Add an eBay Partner Network campaign ID in <strong>API & affiliate connections</strong> if you want eBay clicks to be commissionable.
+      </p>
+    </div>
+    <div class="starter-populate-actions">
+      <label class="auto-check">
+        <input id="starter-auto-publish" type="checkbox" checked>
+        Publish imported products immediately
+      </label>
+      <button id="populate-starter-store" type="button">Populate starter store</button>
+    </div>
+  </div>
+</section>
+
+<section class="admin-section"><h2>Manual import</h2><div class="import-grid"><form class="panel" id="demo-form"><h3>Demo data</h3><p>Test the complete workflow without credentials.</p><button>Load demo catalog</button></form><form class="panel" id="ebay-form"><h3>eBay + Rakuten search</h3><label>Search</label><input id="ebay-query" placeholder="aquarium filter" required><label>Limit</label><input id="ebay-limit" type="number" value="30" min="1" max="200"><button>Search marketplaces</button></form><form class="panel" id="awin-form"><h3>Awin Enhanced Feed</h3><label>Advertiser ID</label><input id="awin-id" inputmode="numeric" placeholder="12345" required><label>Locale</label><input id="awin-locale" value="en_US"><label>Limit</label><input id="awin-limit" type="number" value="250" min="1" max="5000"><button>Import Awin</button></form></div></section>
+<section class="admin-section foldable-section" data-fold-section="products"><div class="section-head"><div><h2>Review queue</h2><p class="muted">Deal Heat improves as repeated API runs build price history.</p></div><div class="section-actions"><button id="toggle-products-list" type="button" class="ghost fold-toggle" aria-expanded="true" aria-controls="review-list-wrap">Collapse products</button><button id="refresh" class="ghost">Refresh</button></div></div><div id="review-list-wrap" class="fold-content"><div id="review-list"></div></div></section>
+</section></main>
+<footer data-site-footer></footer>
+<script type="module" src="/js/admin.js?v=3.7.61"></script>
+<script defer src="/js/boot-recovery.js?v=3.7.61"></script>
+</body></html>
